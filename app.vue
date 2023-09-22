@@ -13,10 +13,10 @@
 
             <div class="grid grid-cols-2 gap-x-4">
               <div>
-                <img :src="imageOriginal" v-if="imageOriginal">
+                <img :src="imageOriginal" v-if="imageOriginal" :class="{ 'blur-sm': pending }">
               </div>
               <div class="self-center">
-                <img :src="imageProcessed" class="transition-all bg-[size:25px] bg-white" style="background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA3LjkzNyA3LjkzOCcgaGVpZ2h0PSczMCcgd2lkdGg9JzMwJz48ZyBmaWxsPScjZWVlZmYwJz48cGF0aCBwYWludC1vcmRlcj0nc3Ryb2tlIGZpbGwgbWFya2VycycgZD0nTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6Jy8+PC9nPjwvc3ZnPgo=);" :class="{ 'blur-sm': pending }" v-if="imageProcessed">
+                <img :src="imageProcessed" class="transition-all bg-[size:25px] bg-white" style="background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA3LjkzNyA3LjkzOCcgaGVpZ2h0PSczMCcgd2lkdGg9JzMwJz48ZyBmaWxsPScjZWVlZmYwJz48cGF0aCBwYWludC1vcmRlcj0nc3Ryb2tlIGZpbGwgbWFya2VycycgZD0nTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6Jy8+PC9nPjwvc3ZnPgo=);" v-if="imageProcessed">
                 <p v-if="pending">ระบบกำลังประมวลผล ...</p>
               </div>
             </div>
