@@ -5,6 +5,8 @@ export default defineNuxtConfig({
     modules: ["@nuxt/ui"],
     runtimeConfig: {
         // The private keys which are only available within server-side
-        api: "",
+        public: {
+            api: "",
+        },
     },
 });

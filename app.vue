@@ -57,6 +57,10 @@
 
 <script setup>
 
+  const config = useRuntimeConfig()
+
+  console.log(config);
+
   const imageOriginal = ref(null)
   const imageProcessed = ref(null)
   const inputImage = ref()
@@ -83,12 +87,17 @@
       const formData = new FormData();
       formData.append('file', imageData.value);
 
+    
+
+      const uri = `${config.public.api}upload`
 
       pending.value = true
-      const data = await $fetch('/api/remove-bg', {
+      const res = await fetch(uri, {
         body: formData,
         method: 'POST',
       })
+
+      const data = await res.json()
 
       if(data.success) {
         pending.value = false
