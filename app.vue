@@ -53,6 +53,9 @@
       </div>
     </div>
   </div>
+  <UModal v-model="isAlert">
+      <div class="text-2xl text-red-600">เกิดข้อผิดพลาด</div>
+  </UModal>
 </template>
 
 <script setup>
@@ -67,6 +70,7 @@
   const imageData = ref(null)
   const pending = ref(false)
 
+  const isAlert = ref(false)
   const buttonUi = {
     icon: {
       size: {
@@ -99,9 +103,13 @@
 
       const data = await res.json()
 
-      if(data.success) {
+
+
+      if(res.status == 200 && data.success) {
         pending.value = false
         imageProcessed.value = data.url
+      }else {
+        isAlert.value = true
       }
   }
 
