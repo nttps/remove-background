@@ -90,7 +90,7 @@
       const formData = new FormData();
       formData.append('file', imageData.value);
 
-      const uri = `${config.public.api}rem-bg`
+      const uri = `${config.public.api}upload-file`
 
       pending.value = true
       fetch(uri, {
