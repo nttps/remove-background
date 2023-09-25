@@ -87,30 +87,22 @@
         imageOriginal.value = e.target.result;
       };
 
-
       const formData = new FormData();
       formData.append('file', imageData.value);
 
-    
-
-      const uri = `${config.public.api}upload`
+      const uri = `${config.public.api}upload-file`
 
       pending.value = true
-      const res = await fetch(uri, {
+      fetch(uri, {
         body: formData,
         method: 'POST',
-      })
-
-      const data = await res.json()
-
-
-
-      if(res.status == 200 && data.success) {
+      })  
+      .then(response => response.blob())
+      .then(blob => {
         pending.value = false
-        imageProcessed.value = data.url
-      }else {
-        isAlert.value = true
-      }
+        imageProcessed.value = URL.createObjectURL(blob)
+      })
+      .catch(e => isAlert.value = true)
   }
 
 
