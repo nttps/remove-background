@@ -55,6 +55,10 @@
     }
   }
 
+  const processRemoveBg = () => {
+    inputImage.value.click();
+  }
+  
   const uploadImage = async (e) => {
       imageData.value = e.target.files[0];
       const reader = new FileReader();
@@ -66,9 +70,10 @@
       const formData = new FormData();
       formData.append('file', imageData.value);
 
-      const uri = `${config.public.api}upload-file`
+      const uri = `${config.public.api}/upload-file`
 
       pending.value = true
+
       fetch(uri, {
         body: formData,
         method: 'POST',
@@ -79,10 +84,5 @@
         imageProcessed.value = URL.createObjectURL(blob)
       })
       .catch(e => isAlert.value = true)
-  }
-
-
-  const processRemoveBg = () => {
-    inputImage.value.click();
   }
 </script>
