@@ -18,33 +18,11 @@
               <div class="self-center">
                 <img :src="imageProcessed" class="transition-all bg-[size:25px] bg-white" style="background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA3LjkzNyA3LjkzOCcgaGVpZ2h0PSczMCcgd2lkdGg9JzMwJz48ZyBmaWxsPScjZWVlZmYwJz48cGF0aCBwYWludC1vcmRlcj0nc3Ryb2tlIGZpbGwgbWFya2VycycgZD0nTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6Jy8+PC9nPjwvc3ZnPgo=);" v-if="imageProcessed">
                 <p v-if="pending">ระบบกำลังประมวลผล ...</p>
+
+                <a v-if="imageProcessed" :href="imageProcessed" class="bg-blue-500 text-white text-xl hover:bg-blue-700 rounded-sm py-2 px-4">ดาวน์โหลด</a>
               </div>
             </div>
           </form>
-
-     
-          <div class="hidden">
-            <div class="relative pt-1">
-              <div class="flex mb-2 items-center justify-between">
-                <div>
-                  <span
-                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200">
-                    Upload Progress
-                  </span>
-                </div>
-                <div class="text-right">
-                  <span id="progress-label" class="text-xs font-semibold inline-block text-blue-600">
-                    0%
-                  </span>
-                </div>
-              </div>
-              <div class="relative w-full bg-blue-200 rounded-full">
-                <div class="absolute top-0 h-2 bg-blue-500 rounded-full"></div>
-              </div>
-
-            </div>
-          </div>
-          <div id="progress" class="text-xl"></div>
 
           <div id="result-container" class="mt-4">
             <img src="" id="processed-image" class="w-[500px] h-auto" alt="">
@@ -61,8 +39,6 @@
 <script setup>
 
   const config = useRuntimeConfig()
-
-  console.log(config);
 
   const imageOriginal = ref(null)
   const imageProcessed = ref(null)

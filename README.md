@@ -1,4 +1,11 @@
-# Nuxt 3 Minimal Starter
+#Config
+
+เปลี่ยนชื่อ .env.expamle เป็น .env
+
+NUXT_PUBLIC_API  =  ลิงก์สำหนับใช้งาน API
+
+
+# Nuxt 3 Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -71,5 +78,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
