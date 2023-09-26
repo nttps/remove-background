@@ -1,4 +1,4 @@
-#Config
+# Config
 
 เปลี่ยนชื่อ .env.expamle เป็น .env
 
